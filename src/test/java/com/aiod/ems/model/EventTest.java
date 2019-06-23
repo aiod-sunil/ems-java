@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class EventTest {
 
 	private Event walking = new Event("101", "walking", "workout", "open", new Date());
-	private Event runing = new Event("102", "running", "workout", "open", new Date());
+	private Event running = new Event("102", "running", "workout", "open", new Date());
 
 	@Test
 	@DisplayName("Event should be created")
@@ -32,11 +32,11 @@ class EventTest {
 	@DisplayName("Flux validated with events")
 	void fluxShouldExWith() {
 
-		Flux<Event> events = Flux.just(walking, runing);
+		Flux<Event> events = Flux.just(walking, running);
 
 		StepVerifier.create(events)
 				.expectNext(walking)
-				.expectNext(runing)
+				.expectNext(running)
 				.expectNextCount(2)
 				.expectComplete();
 	}
