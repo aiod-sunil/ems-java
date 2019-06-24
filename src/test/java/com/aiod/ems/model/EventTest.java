@@ -24,7 +24,7 @@ class EventTest {
 		assertNotNull(walking);
 		assertNotSame(new Event("103", "running", "workout", "open", new Date()), walking);
 		assertTrue(walking.getId().contentEquals("101"), () -> "walking event id should be equals");
-		assertTrue(walking.getName().equals("running"), () -> "name and status are valid");
+		assertTrue(walking.getName().equals("walking"), () -> "name and status are valid");
 
 	}
 
