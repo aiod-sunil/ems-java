@@ -54,7 +54,7 @@ public class EventHandler {
 	private static Mono<ServerResponse> defaultWriteResponse(Flux<Event> eventPublisher) {
 		return Mono
 				.from(eventPublisher)
-				.flatMap(event -> created(URI.create("/event/create/" + event.getId()))
+				.flatMap(event -> created(URI.create("/event/" + event.getId()))
 						.contentType(APPLICATION_JSON)
 						.build()
 				);
